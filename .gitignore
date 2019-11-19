@@ -45,3 +45,4 @@ venv
 .env
 .env-mysql
 .idea/*
+.flaskenv
