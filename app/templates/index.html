@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 {% block title %}Index{% endblock %}
 {% block content %}
-    <h1>Hello, {{ username }}</h1>
-    <p class="important">
-        Hello, welcome to flask blog
-    </p>
+    <h1>Hi, {{ current_user.username }}!</h1>
+    {% for post in posts %}
+        <div><p>{{ post.author.username }} says: <b>{{ post.body }}</b></p></div>
+    {% endfor %}
 {% endblock %}

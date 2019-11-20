@@ -8,7 +8,8 @@ from . import main
 @login_required
 def index():
     context = {
-        'username': 'Nam Nguyen'
+        'username': 'Nam Nguyen',
+        'posts': []
     }
     return render_template(
         'index.html',

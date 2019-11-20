@@ -55,7 +55,12 @@
                         <path d="M21 21l-5.2-5.2"/>
                     </svg>
                 </a>
-                <a class="btn btn-sm btn-outline-secondary" href="{{ url_for('auth.login') }}">Sign In</a>
+                {% if current_user.is_anonymous %}
+                    <a class="btn btn-sm btn-outline-primary" href="{{ url_for('auth.login') }}">Login</a>
+                    <a class="btn btn-sm btn-outline-secondary" href="{{ url_for('auth.register') }}">Register</a>
+                {% else %}
+                    <a class="btn btn-sm btn-outline-secondary" href="{{ url_for('auth.logout') }}">Logout</a>
+                {% endif %}
             </div>
         </div>
     </header>
